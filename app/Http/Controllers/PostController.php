@@ -15,7 +15,7 @@ class PostController extends Controller
 	{
 		$posts = Post::where('category_id',1)
 				->latest()
-				->paginate(1);
+				->paginate(9);
 
 		return view('homepage.index',compact('posts'));
 	}
