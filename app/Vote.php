@@ -35,7 +35,8 @@ class Vote extends Model
                     ->where('model','App\Post')
                     ->where('votes.updated_at','>',$date->toDateTimeString())
                     ->selectRaw('posts.*, sum(votes.value) as sum_value')
-                    ->get(5);
+                    ->take(5)
+                    ->get();
 
         return $bestPosts;
     }
