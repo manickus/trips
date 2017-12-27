@@ -300,10 +300,6 @@
   		var value = btn.getAttribute('data-value'),
   			model = btn.getAttribute('data-model'),
   			id = btn.getAttribute('data-id');
-  			console.log(value);
-  			console.log(model);
-  			console.log(id);
-
   		$.ajax({
 	    	url: "/system/vote",
 	        type: "POST",
@@ -314,7 +310,34 @@
         		id: id,
         	},
             success: function(results){
-         		console.log('ok');
+         		var vote = btn.parentElement,
+         			voted = 0,
+         			scoreBoard = vote.querySelector('p'),
+         			score = parseInt(scoreBoard.innerHTML);
+         		if(vote.querySelector('.red')) {
+         			voted = -1;
+         			vote.querySelector('.red').classList.remove('red');
+         		} else if(vote.querySelector('.green')) {
+         			voted = 1;
+         			vote.querySelector('.green').classList.remove('green');
+         		}
+
+         		if(voted === value) {
+         			score -= value;
+         		} else {
+         			if(value == 1) {
+         				score += 1;
+         				if(voted == -1) score +=1;
+         				scoreBoard.innerHTML = score;
+         				btn.classList.add('green');
+         			} else {
+         				score -= 1;
+         				if(voted == 1) score -=1;
+         				scoreBoard.innerHTML = score;
+         				btn.classList.add('red');
+         			}
+         		}
+
             }
     	});
   	}
