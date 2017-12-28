@@ -4,7 +4,7 @@
 			#{{ $post->hashid }}
 		</div>
 		<time class="post-time" datetime="2017-11-26">
-			{{ $post->created_at }}
+			{{ $post->updated_at }}
 		</time>
 	</div>
 	<p class="post-text">

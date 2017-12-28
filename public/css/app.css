@@ -589,6 +589,13 @@ body
 		color: #c0392b;
 	}
 
+	.menu-profile-item
+	{
+		display: flex;
+		justify-content: center;
+		margin: 10px;
+	}
+
 
 }
 

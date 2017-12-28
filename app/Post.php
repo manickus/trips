@@ -24,6 +24,12 @@ class Post extends Model
     	return Carbon::parse($value)->diffForHumans();
     }
 
+      public function getUpdatedAtAttribute($value)
+    {
+        Carbon::setLocale('pl');
+        return Carbon::parse($value)->diffForHumans();
+    }
+
 
     public function getHashidAttribute()
 	{
