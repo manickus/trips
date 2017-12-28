@@ -8,7 +8,7 @@
 		</time>
 	</div>
 	<p class="post-text">
-					{!! nl2br(e($post->body)) !!}
+		{!! nl2br(e($post->body)) !!}
 	</p>
 	<div class="post-options">
 		<div class="votes">
@@ -265,8 +265,6 @@
 			</div>
 		</div>
 	@endforeach
-		
-		
 	</section>
 </article>
 

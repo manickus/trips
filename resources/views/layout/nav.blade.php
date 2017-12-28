@@ -52,7 +52,10 @@
 						    {!! Form::email('email',null, ['class'=>'form-control login-form-input','placeholder' => 'Nick']) !!}
 						    {!! Form::label('password', 'Hasło', ['class' => 'login-form-label']) !!}
 							{!! Form::password('password', ['class'=>'form-control login-form-input']) !!}
-							{!! Form::submit('Zaloguj', ['class' => 'btn btn-send-comment']) !!}
+							<div class="login-links">
+									{!! Form::submit('Zaloguj', ['class' => 'btn btn-send-comment']) !!}
+							{!! link_to_route('register', $title = "Rejestracja",null,['class' => 'btn btn-send-comment']) !!}
+							</div>
 						</div>
 					{!! Form::close() !!}
 				@endauth
