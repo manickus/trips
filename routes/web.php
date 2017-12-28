@@ -72,9 +72,14 @@ Route::post('/system/vote', [
 	'as' => 'vote.vote'
 	]);
 
-Route::get('/profile', [
+Route::get('/profil', [
 	'uses' => 'UserController@index',
 	'as' => 'user.profile'
+	]);
+
+Route::get('/regulamin', [
+	'uses' => 'HomeController@agree',
+	'as' => 'agree'
 	]);
 
 Route::bind('post',function ($value,$route){
@@ -87,9 +92,3 @@ Route::bind('post',function ($value,$route){
 
 Auth::routes();
 
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
