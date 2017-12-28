@@ -21,16 +21,7 @@
 
 </head>
 <body>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-7702052866552132"
-     data-ad-slot="1486890034"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
     @include('partials.fbjdk')
     @include('layout.nav')
     <main class="main-wrapper">
