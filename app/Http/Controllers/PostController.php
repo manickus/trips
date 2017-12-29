@@ -14,7 +14,7 @@ class PostController extends Controller
 	public function index()
 	{
 		$posts = Post::where('category_id',1)
-				->latest()
+				->orderBy('updated_at')
 				->paginate(9);
 
 		return view('homepage.index',compact('posts'));

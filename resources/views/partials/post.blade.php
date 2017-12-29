@@ -297,7 +297,8 @@
   		if(btn.tagName === "I") btn = btn.parentElement;
   		var value = btn.getAttribute('data-value'),
   			model = btn.getAttribute('data-model'),
-  			id = btn.getAttribute('data-id');
+  			id = btn.getAttribute('data-id');	
+
   		$.ajax({
 	    	url: "/system/vote",
 	        type: "POST",
@@ -311,17 +312,20 @@
          		var vote = btn.parentElement,
          			voted = 0,
          			scoreBoard = vote.querySelector('p'),
-         			score = parseInt(scoreBoard.innerHTML);
+         			score = parseInt(scoreBoard.innerHTML),
+         			el;
+         			console.log(vote.querySelector('.red'));
          		if(vote.querySelector('.red')) {
          			voted = -1;
-         			vote.querySelector('.red').classList.remove('red');
+         			btn.className = "vote call-to-vote";
          		} else if(vote.querySelector('.green')) {
          			voted = 1;
-         			vote.querySelector('.green').classList.remove('green');
+         			btn.className = "vote call-to-vote";
          		}
 
-         		if(voted === value) {
+         		if(voted == value) {
          			score -= value;
+         			scoreBoard.innerHTML = score;
          		} else {
          			if(value == 1) {
          				score += 1;
