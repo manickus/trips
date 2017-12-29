@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Vote;
+use App\User;
 use Auth;
 
 class VoteController extends Controller
@@ -45,5 +46,25 @@ class VoteController extends Controller
 
 		return response(['data' => $newValue],200);
 	} 
+
+
+	public function adminAddVotes(Request $request)
+	{
+		$voteNumbers = $request->value;
+		$model = $request->model;
+		$model_id = $request->id;
+		
+		for($i=1;$i<=$voteNumbers;$i++)
+		{
+			$vote = new Vote;
+			$vote->user_id = $i;
+			$vote->model = $model;
+			$vote->model_id = $model_id;
+			$vote->value = 1;
+			$vote->save();
+		}
+
+		return response(['data' => 'ok'],200);
+	}
 
 }

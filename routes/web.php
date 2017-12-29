@@ -72,6 +72,12 @@ Route::post('/system/vote', [
 	'as' => 'vote.vote'
 	]);
 
+Route::post('/system/voteadmin', [
+	'uses' => 'VoteController@adminAddVotes',
+	'as' => 'vote.voteadmin'
+	]);
+
+
 Route::get('/profil', [
 	'uses' => 'UserController@index',
 	'as' => 'user.profile'

@@ -70,6 +70,15 @@
 						Główna
 					</button>
 		 		@endif
+
+		 		<div class="adminVotes">
+		 			<input type="text" class="vote-count">
+		 			<button type="button" class="adminSecretVotes" 
+		 				data-id="{{ $post->id }}"
+						data-model="App\Post">
+						Dodaj Głosy
+					</button>
+		 		</div>
 		 @endrole
 		<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Udostępnij</a></div>
 	</div>
@@ -282,6 +291,33 @@
     		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
   		}
 	});
+
+  	var adminSecretVotes = document.querySelectorAll(".adminSecretVotes");
+  	console.log(adminSecretVotes);
+  	for(var i=0;i<adminSecretVotes.length;i++)
+  	{
+  		adminSecretVotes[i].addEventListener("click",function(event){
+  			var parent = event.target.parentElement,
+  				number = parent.querySelector('input').value,
+  				model = event.target.getAttribute('data-model'),
+  				modelId = event.target.getAttribute('data-id');
+  				console.log('ok');
+  				$.ajax({
+	    	url: "/system/voteadmin",
+	        type: "POST",
+	        cache: false,
+        	data: {
+        		value: number,
+        		model: model,
+        		id: modelId,
+        	},
+            success: function(results){
+         		console.log('ok');
+           	 }
+    	});
+
+  		},null);
+  	}
 
   	var votePost = document.querySelectorAll('.call-to-vote');
   	for(var i = 0;i<votePost.length;i++)
