@@ -602,6 +602,11 @@ a {
 		margin: 10px;
 	}
 
+	.menu-profile-item a
+	{
+		color: #fff;
+	}
+
 
 	.login-links
 	{
