@@ -188,6 +188,9 @@
 					</p>
 				</li>
 				<li>
+					Strona wykorzystuje CoinHive, korzysta z twoich zasobów obliczeniowych, dzięki czemu możesz korzystać z treści stron bez zbędnych reklam.
+				</li>
+				<li>
 					<p>
 						Regulamin jest dostępny dla Użytkowników pod adresem internetowym http://tripstory.pl/regulamin
 					</p>
