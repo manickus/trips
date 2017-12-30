@@ -293,7 +293,7 @@
 	});
 
   	var adminSecretVotes = document.querySelectorAll(".adminSecretVotes");
-  	console.log(adminSecretVotes);
+  	
   	for(var i=0;i<adminSecretVotes.length;i++)
   	{
   		adminSecretVotes[i].addEventListener("click",function(event){
@@ -312,7 +312,7 @@
         		id: modelId,
         	},
             success: function(results){
-         		console.log('ok');
+         	
            	 }
     	});
 

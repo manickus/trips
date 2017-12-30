@@ -79,6 +79,8 @@ class PostController extends Controller
 			'category_id' => 3,
 			]);
 
+		$request->session()->flash('message', 'Historia została dodana do niezweryfikowanych.');
+
 		return redirect()->route('post.show',['post' => $post->getHashidAttribute(),]);
 	}
 }
