@@ -67,12 +67,12 @@ class PostController extends Controller
 
 	public function store(PostRequest $request)
 	{
-		Post::create([
+		$post = Post::create([
 			'user_id' => $request->input('user_id'),
 			'body' => $request->input('body'),
 			'category_id' => 3,
 			]);
 
-		return redirect()->back();
+		return redirect()->route('post.show',['post' => $post->getHashidAttribute(),]);
 	}
 }
