@@ -2,6 +2,15 @@
 
 @section('content')
 
+@auth
+@else
+<article class="story-rules">
+			<h3> Dodając historię jako niezalogowany, nie zalicza się ona do statystyk! </h3>
+			
+
+		</article>
+@endauth
+
 		{!! Form::open(['route' => 'post.store' ,'files' => true,'enctype' => 'multipart/form-data']) !!}
 			<div class="form-group">
 			    {!! Form::label('body', "Treść histori:", ['class'=>'form-label']) !!}
@@ -10,7 +19,6 @@
   			<div class="form-group">
     			{!! Form::submit('Wyślij', ['class' => 'btn btn-send-comment']) !!}
     		</div>
-    		{!! Form::hidden('user_id', 1) !!}
 		{!! Form::close() !!}
 
 

@@ -7,6 +7,7 @@ use App\Http\Requests\PostRequest;
 use App\Post;
 use App\User;
 use App\Vote;
+use Auth;
 
 class PostController extends Controller
 {
@@ -67,8 +68,13 @@ class PostController extends Controller
 
 	public function store(PostRequest $request)
 	{
+		if(Auth::user()){
+			$userId = Auth::user()->id;
+		} else {
+			$userId = 1;
+		}
 		$post = Post::create([
-			'user_id' => $request->input('user_id'),
+			'user_id' => $userId,
 			'body' => $request->input('body'),
 			'category_id' => 3,
 			]);
