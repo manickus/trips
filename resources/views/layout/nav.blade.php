@@ -49,7 +49,7 @@
 						</header>
 
 							{!! Form::label('email', 'Nazwa', ['class' => 'login-form-label']) !!}
-						    {!! Form::email('email',null, ['class'=>'form-control login-form-input','placeholder' => 'Nick']) !!}
+						    {!! Form::text('email',null, ['class'=>'form-control login-form-input',]) !!}
 						    {!! Form::label('password', 'Hasło', ['class' => 'login-form-label']) !!}
 							{!! Form::password('password', ['class'=>'form-control login-form-input']) !!}
 							<div class="login-links">
