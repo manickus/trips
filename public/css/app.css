@@ -874,6 +874,10 @@ a {
 	}
 
 
+.only-mobile
+{
+	display: none;
+}
 
  }
 
