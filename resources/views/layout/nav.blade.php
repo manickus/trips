@@ -32,6 +32,9 @@
 					<a href="{{ route('post.bests') }}">Hity</a>
 				</li>
 				<li>
+				<li class="nav-item">
+					<a href="{{ route('post.create') }}">Dodaj Historie</a>
+				</li>
 					@if (\Auth::check())
 				<li class="menu-profile-item">
 						<a href="{{ route('user.profile') }}" class="btn-profile">Profil</a>
