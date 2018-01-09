@@ -664,6 +664,11 @@ a {
 		font-family: 'Vollkorn SC', serif;
 	}
 
+	.only-lg
+	{
+		display: none;
+	}
+
 }
 
  @media only screen and (min-width : 1224px) {
@@ -877,6 +882,12 @@ a {
 .only-mobile
 {
 	display: none;
+}
+
+.only-lg
+{
+	display: flex;
+	justify-content: center;
 }
 
  }
