@@ -458,6 +458,7 @@ a {
 	.pagination
 	{
 		display: flex;
+		flex-wrap: wrap;
     	justify-content: center;
     	list-style: none;
     	box-sizing: border-box;
