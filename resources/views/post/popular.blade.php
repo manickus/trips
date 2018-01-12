@@ -5,6 +5,9 @@
 	 	<li><a href="{{ route('post.show',['post' => $post->hashid]) }}"> {{ str_limit($post->body,20,'...') }}</a> </li>	
 	 @endforeach
 	</ul>
+
+</section>
+
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
      style="display:block"
@@ -15,4 +18,3 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-</section>
