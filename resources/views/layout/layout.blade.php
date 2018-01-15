@@ -4,12 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
+    <meta name="desctription" content="TripStory.pl - Anonimowe historie z imprez, oraz ciekawych życiowych doświadczeń">
+
+    <meta name="tags" content="Impreza, Anonimowe historie, Alkohol, Seks, Marihuana, Narkotyki">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-   {!! SEOMeta::generate() !!}
+    <title>TripStory</title>
+
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Vollkorn+SC" rel="stylesheet">
