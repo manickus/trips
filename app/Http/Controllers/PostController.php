@@ -8,15 +8,23 @@ use App\Post;
 use App\User;
 use App\Vote;
 use Auth;
+use SEOMeta;
 
 class PostController extends Controller
 {
     
 	public function index()
 	{
+
+		
+
 		$posts = Post::where('category_id',1)
 				->orderBy('updated_at','DESC')
 				->paginate(9);
+		
+
+		SEOMeta::setTitle(' Strona główna');
+        SEOMeta::setDescription('Najlepsze historie z tripów, imprez');
 
 		return view('homepage.index',compact('posts'));
 	}
@@ -24,16 +32,29 @@ class PostController extends Controller
 
 	public function create()
 	{
+		SEOMeta::setTitle('Napisz historie');
+        SEOMeta::setDescription('Podziel się swoją historią z imprezy, tripa');
 		return view('partials.create');
 	}
 
 	public function show(Post $post)
 	{
+
+		SEOMeta::setTitle('Historia #'.$post->hashid);
+        SEOMeta::setDescription(substr($post->body, 0, 30));
+        SEOMeta::addMeta('article:published_time', $post->updated_at, 'property');
+		
+
 		return view('post.show',compact('post'));
 	}
 
 	public function unverifiedPage()
 	{
+
+		SEOMeta::setTitle('Niezwerikowane');
+        SEOMeta::setDescription('Niezwerikowane historie');
+
+
 		$posts = Post::where('category_id',3)
 				->latest()
 				->paginate(9);
@@ -43,6 +64,11 @@ class PostController extends Controller
 
 	public function anteroomPage()
 	{
+
+		SEOMeta::setTitle('Poczekalnia');
+        SEOMeta::setDescription('Historie oczekujące w poczekalni');
+
+
 		$posts = Post::where('category_id',2)
 				->latest()
 				->paginate(9);
@@ -52,6 +78,9 @@ class PostController extends Controller
 
 	public function bests()
 	{
+
+		SEOMeta::setTitle('Hity');
+        SEOMeta::setDescription('Hity z tripów, imprez');
 		$posts = Vote::bestPosts();
 		return view('homepage.index',compact('posts'));
 	}
