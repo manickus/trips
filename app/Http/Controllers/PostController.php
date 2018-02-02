@@ -41,7 +41,7 @@ class PostController extends Controller
 	{
 
 		SEOMeta::setTitle('Historia '.$post->hashid);
-        SEOMeta::setDescription(substr($post->body, 0, 30));
+        SEOMeta::setDescription($post->body);
         SEOMeta::addMeta('article:published_time', $post->updated_at, 'property');
 		
 
