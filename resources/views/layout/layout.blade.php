@@ -16,7 +16,13 @@
     <link href="https://fonts.googleapis.com/css?family=Vollkorn+SC" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-7702052866552132",
+          enable_page_level_ads: true
+     });
+</script>
 </head>
 <body>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -28,11 +34,9 @@
 
   gtag('config', 'UA-111744044-1');
 </script>
-
-   
     @include('partials.fbjdk')
     @include('layout.nav')
-    <main class="main-wrapper">
+    <main class="main-wrapper wrap-posts">
         <section class="posts">
             @yield('content')
         </section>
