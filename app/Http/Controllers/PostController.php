@@ -16,9 +16,7 @@ class PostController extends Controller
 	public function index()
 	{
 
-		
-
-		$posts = Post::where('category_id',1)
+			$posts = Post::where('category_id',1)
 				->orderBy('updated_at','DESC')
 				->paginate(9);
 		
