@@ -23,8 +23,8 @@ class PostController extends Controller
 				->paginate(9);
 		
 
-		SEOMeta::setTitle('TripStory - Strona główna');
-        SEOMeta::setDescription('Najlepsze historie z tripów, imprez');
+		SEOMeta::setTitle('Strona główna');
+        SEOMeta::setDescription('Najlepsze anonimowe historie z tripów, imprez, dziwnych sytuacji. Znajdziesz tutaj alkohol, narkotyki oraz inne używki. Czytaj historie innych, podziel się swoimi.');
 
 		return view('homepage.index',compact('posts'));
 	}
@@ -33,7 +33,7 @@ class PostController extends Controller
 	public function create()
 	{
 		SEOMeta::setTitle('TripStory - Napisz historie');
-        SEOMeta::setDescription('Podziel się swoją historią z imprezy, tripa');
+        SEOMeta::setDescription('Podziel się swoją historią z imprezy, tripa. ');
 		return view('partials.create');
 	}
 
